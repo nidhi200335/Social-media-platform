@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Product Search Engine Bar Filter in JavaScript</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <title>Create Product Search EngineBarFilter in JavaScript</title> -->
+    <!-- ! css -->
+    <link rel="stylesheet" href="search.css" />
+    <!-- !Js -->
+    <script src="search.js" defer></script>
+    <!-- fevicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!-- !font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="full" id="colorc-change">
+        
+    <nav id="color-change" >
+        <!-- <input type="text" placeholder="search"> -->
+       <div class="nav-links" id="color-change">
+           <a href="index.html"> <i class="fa-solid fa-house" style="color: #080808;"> </i></a> <br> <br><br>
+            <a href="search.html"><i class="fa-sharp fa-solid fa-magnifying-glass" style="color: #050505;"><h1></h1></i></a> <br><br><br>
+            <a href="explore.html"><i class="fa-regular fa-compass" style="color: #050505;"><h1></h1></i></a> <br><br><br>
+            <a href="#"><i class="fa-regular fa-message" style="color: #0c0d0d;"><h1></h1></i></a><br><br><br>
+            <a href="#"><i class="fa-sharp fa-regular fa-heart" style="color: #0a0a0a;"><h1></h1></i></a> <br><br><br>
+            <div class="profile">
+                <a href="./profile.html"> <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBYWFRYWFhUYGBgYGBgaGBoYFRgYGRgYGBgZGRgY
+                GBgcIS4lHB4rHxgYJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QHhISHjEsJCw0NjQ0NDQ0NDo0NDQ0NDQ0NDE0NDQ0NDQxND00NDQ0NDE0NDQ
+                0NDQ0NDQ0NDQ0NDQ0NP/AABEIAKgBLAMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAADAAIEBQYHAf/EADkQAAIBAgQEBAQEBgEFAQAAAAE
+                CAAMRBBIhMQVBUWEGInGBE5GhsTJCwfAHFFJictHhIzOSsvGC/8QAGQEAAwEBAQAAAAAAAAAAAAAAAAECAwQF/8QAKhEAAgICAgEDBAEFAQAAAA
+                AAAAECEQMhEjFBBCJhE1FxgTIUIzORoQX/2gAMAwEAAhEDEQA/AM+631EkUXfQR1fBuhF9oait2ExLJ2GqNYAwzViD2jjTIG09pYctvGAGpUZttB
+                H0ieepkk0Cs8RhEA2mjEy0wtO0j0ltykxKkYDqotGoI6u4tB0TGBMpiNepYxgcxtQXjAkBriCL2nqGwkJ+I0wxXNmcfkQF2H+QX8PqbCDAkPiRyn
+                jYsjnYDc3F/wDUp6WPz1/htTqUwQWVnKAMRa4GUnkb78j0mG8YcXNSoKNN2CKxVjsrnS2t7kb76RWxUjYY7xJQXMC+a1ybHnfmf2ZTjxlmDFaTaD
+                8RJCDpuBrOfGmQLg7E2tflpmHYwl6j+QEm5ubnptmOwEBr8F8/Hi7XYny7Ifw+tuo9DvHYfxKVZRkUqSQCpNxe2nTmdpVPw9qVmZs1+in7yPXs3m
+                Cgkf03+eU/pFobtGjfxK+UMhZbjW5vY639T84TBeKK6kM6/EU6XGhHoRof33lRhsUjLqyI1tcxPmPttDUa4APmUDa2W6n7+v8A8isqrNzwnxFTqE
+                6uji10fS4PMdfWabDYqwuTmU7E7zj9Cv57ra4v5RsRzy/6ms4Tx5UYK5GVgCNfzbaet40yXE3he+08uekbhWBRSOn05SQkuyaI1RTvaEwzSYo0iKj
+                kInYAXHlMEqiHcXFoL4BGt4DPbxaGeGmecGG11uI7FQ+wg6oMeddo+MRGzWFjAtRJItqN4eolzeEp9bRMEFpgBeki1w99NoTEPpbrBnEdowMrxc3IEh4fysJYYumDrIBWZMtGhpvcQYqZTpGYIHKI8jWUI9quSIHCJrcyQRaeUhAKJF9Y4C5j1SeqkYDaiARyxrxKsAPTUMSExBJKpJACHjy/w2y6EiwPS+l5j6lRXpVKOHZkrB6mqj8q3/ON/KFXfeb2sgtOacfpVcEzVaVRcruzKjDzKzElgvVdYmhplfheL4psPlan8ZNQHLedGGmvO46yofB1KhLkZEJ3cjlp+IjX/iTeH4kqp+JsWLEC4zsxJsbchroOloTH4lnVy5CqmgXYX5L++0hy3SLUdWyMMLTRLtVvfkCCL7XtK6rihcLTU2vqTuYNyWHM/wCIsPrv8oApYbhfqT8pajfZEpV0WdXiQVQFXXXPe4U+gHPvK81zfN1gEex6z19+0pRSJcmx9Q3a45720seftHU65y5e4Pv5v9wSobX/AGZ5lOkZJKoYizqelv8ARko4kuy252uP7h0lXreSeHoS4HcE9gN4qHfg7T4Trk4aiz6NqhHUAkA/SaC8zXAKoZE2ygALpax21+s0IFttRz9IkxtBVqzxnMS0+8cFgAkMK7QOWxjzrKAetS0FWrJsecayQP8AL63kgCdSDpPS7dY9qRMYKTLubw2MfTW8OUg2aw03gi5MKAK6wBWOWoTcX15QF26x0IzdQki8ioZIDEixjGoHlM2ykXGEF10hFXWMwLgKJKsN5QgVaEoppHOghaIEAHKukbHO08SMBmSPZYQCJoUKwAaS0bSRHqKASTYDeRn4qgRmv5QL3vpCx1YTinFqdIXYjMdl5n2nLfEXGfiVS5IJ1Avy5aDltvL3iHFkyBmUfEcMwFrsqm+Tf8Iy2+cxLYdb3csNNAoBJ7libCRdvZdUtE/AogHxHcLY3tqWPYfvnIT4pahcm4XUot+ZOpPfaQalUnQE5eQJH6CNemy2uCL7X5ylEhyJlPEIAVKkjsbXPK9tSO0rzvpHhC1gBLvhnhqpUsSLDSNyjHtgoyl0iiVCdheS8Pg3cgBeff5zqHCPB1NLFlzG3Ox1l9huDIDoir1IFiZDyN9I0WFL+TOdcH8O6MHDH/8AJ35W6WPOXNPgKKVXLby3JsDc9PSbpMCiqVUWB9Y2rgww2572mb5N7NYqKWjk/inhBokVUFraMBt2NpX4LFI9rgq21wbA+s6P4kwpdCCLgjXqOX/M5QFNJyp019iLzWDtUYZI8XZuOCcSFMhGvrt0Hoec6Lw6uGUW/wDk5FSTTTb8Q527i5mw8Jcbvenuw2vppf67xXTHVo2yCxt6/p/uFCyPS0GpueclLNEZs8yxZY60UYjwrGZYQiKAAWEY6QzCDYwGCZbQD63ktpGrD5xMEApJqDzH2jqtMkkwqjTaMvATK+pgAdp5RwNt5NQxZtZLQ7IT4W208Q2liq8pBNLz2gMkoLiFVbQtIACGW0YEcrBMnSTSAYzIICsFTQz16dxDqsVxAZS4rAliAdQdxyPYyg49g6VNWzKLgAqLnLvtlvY620msx2LRFu7BR369huZzHxVxtHeyA3S4DNe+p1IU7HlM5fBcfko8TVLs19SxANtyTrYfvpJnEcKS6UwVWyAtr+GyKnn/APHaUZqOCTcra+2h9zBGodzvyvr94+LFyX2LDD4Vb5VOe12JtobWFh1H/Mh4+ozsWbfUW6WNgPlHYHFlGzfPv+/1jMW13LDmb+8paeyW046LHw5h81QdB1+06nwjBAW6C1hMD4UpjN6m/pedR4cs55+6Z2Y1xxk5EEMgjVEKpE0ijOTPMsRWQ+KcZoUB53F+SggsfaQsJxt6mqYZ8nUkKSOwO8qiLJXEaAZTpyM43xuki1HVhueX0IE7ZTcOL2IPMEWI9ROdfxH4Kf8AvIP8h+oijqQT3EwgxTJorkr0PT99Ja0sSyhKqEgowzhejE2aZwsbyz4NVAYIdqjBWH9uVh92+kucfJlB+DtXBOIrWRWB1IF9dL2l0pnHPCXFij5L+YfhBOjj+n9ROq8Nxi1EDKfUcweYPeKL8PsqUfKLK8QgnaLNNDMKZ4YwNHZoAIwRj80abQAawjKlO9use3SeKpvJGDAK7iNyCSSYKw6ShFcjwuWQabgi94b4mkkoKtSxjb+aCvEKnmiAmKYRTAh7xwaMAqzxyYkMStrAQ5HkfG4jIhc8th1J0A+ZEOpuZW+IqwSi7kElcrADclWBA+kGCKbi1UIrO5LVCpuxGi2FwFHIXHKc3wyZ6gOZQTaxcjQ3HmP39pfY3xaKhfNRu2uXzLlC20v103mfKrlaoxAawyKpuD5tSelhM32aroDjW87KTmFwLjnbTTT0ixGYpawypYAgEXJ5EnUm14bhmLC1C+QPlBPnAYA9bHSR8fj3qm7m+vlUABQOwAAlq7ohtU39yGqHYawlSmRYEbi49DtDYYHNqdLgE8gDv95YeIa6O+ZFyroFG1lAAUewH3jb3QlH2thvDHE6dKoDUJynnrYdNp0jhPiXDO6oj+YjQZSBfpe1pzfgXEqVEAPR+IzEWGnPQAX/AHrNJhsVRZ7JTCVA2UKyEHe17oGsLjmR3sNZjPu0jog/ak2dILjeZnxH/MuypRrBEOjFQS178iOXyj+DV3L5Kq2a1xz001+ol4MKHBYG9ybHsDYD6SE21otpLsx2G/lcEQal3qkjVgXcFttBfLtLfD+M6LtlDEG9rFCpv6MRI2I4ShV6T3OZszMVIYmxGhX1PzlnwbhVNNKdO3ViN/nqT6y01XyQ07vwXGFrBxmBBlf4hQPTKAAs+i32HVj2A/Qc5cMgUaf6lVihudyb2vyBtoO1wI5OkEVbOSY7hqouV1Gc3sQNMt9PeUeDfIxO5F1Udzpf2nUuP4MtQzhRemGZj1F72HecxwKZ6pbbUn5mEJNp2LJFRquybTQF1GoawsR1GxnQPD+MKV0Uk2qpmI/vW1z9Zzr4mWoCeRP22+gmz8H4tauJBY2FKnkXuzN5vtBp8kybXFo6S1UT3OOsjEXhVoCamJ6agtcQtNxbWCfCaaQapaAByek8zdYNFIhGYWgAwame27xrH5xU3vpAB+sbr0jgTHZhKEYfB4u/OXFFrzO4DAOHF9ppVo6aTNFBM0C7i8c23eR3UxgSKdSSgZCpLaGzkQAlq08JvAI3WGCRgHRbC8zPifHZ0sha4N2sNLWttzl42K0sEdrHllHbdiJnOK+HXqlsjmnc6i976HptvIk34Kil5MLh6SfzDoTnD3Vcot5mCtewvYBtPeP8Q8RQhKVEWVR5sy2bPzB9/vLduDDAf9UuGfXJcbX/ABNbqP8AUxNWoWZmY3LMST667mCW7HJ0qLDBYymlN1NIM7aZ2Ykj0At95EwTqHDN+G40Btft6coCq99Bt2/U84lTMD1Gve36y1Gv2Q5XXwWfE+JiqQFQIi7BRYAd+u3OV+Nck26bxYdCdACbkagHX9mSOJ4ZhapayvcEjbMtswI76N7xJJOgbbVmq8GcGWoA7KCRsG+4M32GwJQ3CKvMm9yZlv4eYgNT7g2PtN1WYZd5j5dnUqUVRU8KcNXLnfUD77+wl/iaZXVdATc9upt0/fWZzhqtmQm1izMvW2wJ9prC2ntHDaFk00AZAddI6koBkLEJlHkNzfVCfnY8pDTjAVsrh0PcAg+jX1jcknsFBtaLnEtIBW5njYrNtf1Nh9jCUtZEpKTKjFxRmPGHE6VChURm87qcif1cvkDOacJ8oLdwB3NtpqP4r2z4c/2v/wCyzLcOOcMt7BQWJ7c/p95olUbMJyuVETF1LkEcib+stfDOLCFhexvf06GVObzEHbWTv5IDUEhiARbneOVVTJjd2jsfAMeKiDqND69ZeIk5H4M4k61Ch5DX2uT9p1jDNdQZUXqmTNbtBwZHrDnDM0ZVlkgtZ5TIhLWEHfXbSSMeRqImS20a1SxsZ69QWFpQj0QV547HlyjfintADP0GvreWCNac1wHiYqQGmv4bx5HA1nnPNkx/yR1KEZdMt2DX2kZ3IYXGkm0qwbaFyg7iC9X8D+giJVfYiGwVQObGG/l1iXDgG40M2j6qD7M3hkhVaOWOQ6R73K9TGgaazeM4y6Zm4yXaEidI2pTbdTr35+sICRyjs0NMRynx7iHOICPmCqotYaG51maXCk73C31Ntbcp0nxNwd6pLhrsL/iGmXoBMRjvjYcZdcrHmc2g0K6j3mayW+Kas14KrZTmncnKDpa/bv6RtNTm6W3PS28cz5WupsT+sG7k7nn+zNkYuiywOIZVOUak9NlGtpOqYxcoVxmR82dRYMMpuHRjsy+a3LcHeVFOsVFuvPYg2+xsI1cRlU31OVlHYtYEjppf5yeL5WXyXGi98L8TWhUZVbMhNwSMp9xyNul5vMTxXOgtcA/bnOOUqhVgw3BvOp+F69OvT+G2oIOTqP6l9RMc8Wna8nR6eaap+AZ4lXR1KKHRTp1t0mkXidWqAAjJfc6aCYzE4avRrhBUvTY2uw/DvbNblewv3mr4Vw2syBxUTKQrKRdgykXuNZklLpHS+FW9fku8Hh0QEltTuSSx9zKnjPE6YWyU2qsSFCquhLX5nS2hv0tLB8Ci3DOaj2uqZgL681Gw5XMkphVzl8oBsAANl7D3ubzfjaowuK2rZT8FwroDm0uAct7hDrdQem0uQbCJ01lR4i4oKFF25hTYdTymSVDcr2c7/iLjRUxSoDpTUA/5Mcx+mWU/C7pXK2uGIBH9pBJkShiQ1U1KxLXJZjuST0hMNiRmdzcX2tyvcD5CdLTUaOS05X8/8PKqDOxG2b6GWGLqhjYaBARfrl2PaVeJq3e40BsAO2wvCNTLIzLmuD5xluttLHNyicbqxKVXRoPBtIOXLG1tRY2LMQQoHufrOtcCRlooGJJ537TmPgOph1BNRwrA3OawtbRQO/P5TpvCOI06mZEP4LA+4uLRxrkwlfFFpoYCrpPWXvB1dpoQOI8sCgI+ckKbiDOkTGBrpciJwdNIWpe1xGrU6woQPKQdDPLCJlKkkaiCetrsYwOQcZ4Ta5AlBRxT020J0m7ruGUgzFcVpZXMwxyUvazbLHjtGq4D4o1CubGbvA40OAQZwxTbUTWeGOPlWCufScvqPS0uUP8ARphzXqR1VXhg95UUMTmUESTTqTz+VHVRMzQqNrb5SAH1h1fQ9to4z2JosUfrpEyDn9pG+LoDCtUsBN1NVshxB18P6e+o/feYnxph2FM5Us1wNr+U75e83VOsCLEaH6ekiY6iroysuYW26gcr9ehkaTU14KV9M4Vi8OqjQ6k7dDzEhqBfX279LzS8fw2SsEy8rgsLZgT30zDYmZzELZmBFtflPWxT5RTOLLHjLRJw1Avay3y6sO3LnB16GgIOhO/fvCUqzqjLm8p3Gn15x5KmmFU35tfk2lj6a2lt0yaTRXFSDbnLLgvFWw7hhtcEjuOY7yIxXMbXIA9yQNT2gkF9JTSapkxbi7R1OtVFdVdTcEBlI133B+sncPoqo1pjXfKN/W28554W458Fgrn/AKbH/wASdz6Tq+CCEXBBB29Jxyg4So9HHmUohMH5fwqFHpLNDpBIqjlPXqgS06WzOT5MWJrBROefxAxByKnNzc9gJtVbO1+XKYDxzVJrBFFyF0HrITuSYmqi0YxqQZRZgCpsQdNN81/We4Fk1V7hW/MPykfcR1Ci2YMqlrbi33jsTgmLMVU5V1vawAsDb17Tp5Lqzl4vtIfi+GujAizK34WU3vJ/C6tb/tBSqFszXWw06k+knYWlSfCswYq6WNmP/qvebnh2Cz0KbOvnKjMCLWNuYnHm9S4rrfR0Qwq7v5MavCVqBctJjl0Vg2UsP7jz11l94R4bXo1jmayOD5b3NxqDm5zTcKwSkXI0Gw5SXRALmw2On2M5Y+oytX4ZrLHH7E9BprPWEjVK5Bsqljz1sB7w6k2vPSwZlPXlHJkxuOxMTPFbWOJ0gFrgX5zoMgrQdRLj0jFck3McWgAsxjcxiZtIMVe0AOXJUmf42NZaLUlNxWpczlxL3HTmftKyORiCCOUbEJ1nIdG8K8YzKFJ1E1SVPrOR8BxJSqNdDOm4SrdAZ4Prsf0566Z6WCXKJOepJWHfrzlaWuZKZ7KLTgjJp2dLRNJ1HS8MWuCvylfhq17X6w9dyCCOk1U9WS4khHsotuJ78QkEn99YBW8vvE1SwI/fSVzpCopfEeHWrTI5i5BP+V5yviFOzkDlvOtYp7oQOhExnD+DGqarW8pZlB52BsTfnqDOr0OfgpOXRGfFySSMc75jr2Hy0k18Iy3UHMSt7DXfl3N7S0xvhlgQEBNzubi3S9xpHJw98O1M1Fa7MAGU31J0AXf5T0vrwkvY/wBHGsMov3L9lJWwdWkQWUr++cE34gddSCb6a852VuFpiEyshK21YjKSew3+ciL4Kw6keXMdLA7C3PvMI+t9tyW/g0fpt1FnNuFcFesc1iEB1Yi1+w6zV8Bxj0mNIm4U2APIcrHpNm+FFgALAdpmMZgCMSWGxVb+us5/6uWWTTVLwdEMMYLXfk0C8SYjb6xCqz76CAp4c2njAqRpNbk1sdLwXCMEQkmUdDgJepUq1N3/AAD+lbWse5i/my+Lo0fyhWdvawX6ma4JpM8rbdLolUtmMPhmmHVAWUEHNlYrcDrDcR8Lpkyq7qg/ILW+drzUmiCwbmNPaEr0wVI6gzJRnt3+BuSOV+FeD06+apbKq1coF9wLEXG5nS1SydNNPYTG/wANAFXFId1q3+6/dTNsReaZ0+bt/gzhK4o8wgyUvYmDwAspbmdv3+9o7HG1Mjt+siYjE5Aq9FBPvsJhKSi1fhGiV/snBwJ78YdZTpXLc+5PIDqeghUe+x06829ByhDPW0EoX2WwdTvGMinbSVGK4iEIU39F3A7zzD8QVgStrdT9d51x9c1powfpk+i1amb6GDquR0lTV4qLkC5tuToPYSqrcTLMQDoI36/7IX9N8l6+KIvcj5yKeI9xM9icf0MrX4ib7xL1WSXSD6EUZ2riLCVVepcxVKl4KelGPE5ZS5CiEUQlkB8K1nU9503hNS6Cc24fSzOJ0TAjKgnlf+lTSR3ekT2WatDl9JCpG8kXnjNUdxIRwIcVdRKutU1nvx9u0EmkFFqauh9ZF+PZWJOwJkKpi7SDxvEH+Xq5RcspGnLNoT8ppDHKclH7ibUU2RsfxjKrZdWOijqx0A+c1vBeHinQRTvlFz1J1Yn1N5z3wXwtsRXBY+WnZjfmeVhznW0pAW0+c9CeGMPYv2YrI3tlScMSdvcj7dZR4PCBsQzV6bko5CeQlAoNlykC2trnnc25TZFIqVO1pnCPF6BysNSQEbemlo16QEkpGuJ0SiuJkpbILpIK4UFmJHSWrLIyLqZlhh/cRpKXtAfCtIWIpXYS4KyNWpgAmdziQpGc4FSLY2q5/KoUe5/4m2G0zvBKXnqN1IHyH/M0Z2nKtybHLVAuekcTpEImHMQSE2YHwurUeI4qkylfiB2W4tcBswI6izn5TboYyphUZ0qFQXS+U/mGYWYdwekcDDJLk0xQVJoHxL8J9pnOMYrzED8oUA9dNdJf45rofSYrE1rs1/6j9NJyZVczfH0SP59spGmu/fSwgl4iUFxcNsNdLdbSC1QawFPzNrtGsa7ZoybSqsbtc7GH+PlQXOp6SJVxAtZdBe0i1a129BDhy8EtkrE4rKtgdTvK2piSBa+pja9SRHadGPGkjOUh71zaDBkeo+sZUrWNp0qH2MHIpIjFFPQOEUcikmwiiiYeTUcE4dl8xmjDaWnsU8P1EnKez1cKSjoNSqWEVTFgbsB72iimEYKUqNmVtfjlFd3U/wCN2P0lfX8UrsilieZ0H+4op62P0OLyceTNJGmwARkDOt2I6m3yhqpX4brkABU3AG8UU3lCMF7Ucv1JPsqOGE4eg2IUaoRptmvuvve033DsclemlRDdHUEduoPcG4PpPYp5kVcHJ92dze6+CaonsUUv7CCLE0UUvwZjGkND5jFFFh/yFS/iFvIuLawMUU7WZoj8E1Bbqx/1LomKKcGPz+Waz7Bx5MUUqImDIgaq9J5FFJKhrsg4hzYjftznPOK49Vq1RtY3HuAf9z2KZYIqU9mkpNLQyu2lusclTKAPnFFK8FsYTqZFNTUxRSoIiQCrUka
+                pUiinRBIwk2CvrBVTrFFNUZSP/9k="  height="50px" width="50px" alt="img"></a>
+                <p>You</p>
+             </div>
+        </div>
+       
+    </nav>
+    <section class="container" id="colorc-change" >
+      <form action="">
+        <i class="fa fa fa-search"></i>
+        <input type="text" onkeyup="search()" id="search_item" placeholder="Search here" />
+      </form>
+
+      <div class="product_list">
+        <div class="product">
+          <img src="images/profile-1.jpg" alt="" />
+          <div class="p_details">
+            <h2>Aloha</h2>
+           
+          </div>
+        </div>
+        <div class="product">
+          <img src="images/profile-11.jpg" alt="" />
+          <div class="p_details">
+            <h2>richee</h2>
+        
+          </div>
+        </div>
+        <div class="product">
+          <img src="images/profile-12.jpg" alt="" />
+          <div class="p_details">
+            <h2>Engelena</h2>
+          
+          </div>
+        </div>
+        <div class="product">
+          <img src="images/profile-13.jpg" alt="" />
+          <div class="p_details">
+            <h2>wooope</h2>
+           
+          </div>
+        </div>
+        <div class="product">
+          <img src="images/profile-14.jpg" alt="" />
+          <div class="p_details">
+            <h2>Epaulette</h2>
+           
+          </div>
+        </div>
+        <div class="product">
+          <img src="images/profile-15.jpg" alt="" />
+          <div class="p_details">
+            <h2>jack </h2>
+          
+          </div>
+        </div>
+        <div class="product">
+          <img src="images/profile-16.jpg"alt="" />
+          <div class="p_details">
+            <h2>Riya</h2>
+         
+          </div>
+        </div>
+        <div class="product">
+          <img src="images/profile-17.jpg"alt="" />
+          <div class="p_details">
+            <h2>Nidhi</h2>
+         
+          </div>
+        </div>
+        <div class="product">
+          <img src="images/profile-18.jpg" alt="" />
+          <div class="p_details">
+            <h2>Harshita</h2>
+           
+          </div>
+        </div>
+        <div class="product">
+          <img src="images/profile-19.jpg" alt="" />
+          <div class="p_details">
+            <h2>Jersey</h2>
+           
+          </div>
+        </div>
+        <div class="product">
+          <img src="images/profile-20.jpg" alt="" />
+          <div class="p_details">
+            <h2>Diya</h2>
+           
+          </div>
+        </div>
+        <div class="product">
+          <img src="images/profile-1.jpg" alt="" />
+          <div class="p_details">
+            <h2>Qutee</h2>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    <script>
+   $(document).ready(function() {
+ // Add a click event listener to the element you want to change the color of
+ $("#color-change").click(function() {
+  // Change the background color and text color of the element
+  $(this).css("background-color", "plum");
+  $(this).css("color", "white");
+ });
+ $("#color-change").dblclick(function() {
+  // Change the background color and text color of the element
+  $(this).css("background-color", "white");
+  $(this).css("color", "black");
+ });
+});
+
+$(document).ready(function() {
+ // Add a click event listener to the element you want to change the color of
+ $("#colorc-change").click(function() {
+  // Change the background color and text color of the element
+  $(this).css("background-color", "plum");
+  $(this).css("color", "white");
+ });
+ $("#colorc-change").dblclick(function() {
+  // Change the background color and text color of the element
+  $(this).css("background-color", "white");
+  $(this).css("color", "black");
+ });
+});
+
+    </script>  
+  </body>
+</html>

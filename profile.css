@@ -1,0 +1,87 @@
+.containor{
+    padding: 0 15%;
+   
+}
+.bio{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    
+    height: 13em;
+    padding: 3em 0 0 5em;
+    border-bottom: 0.5px #fafafa;
+}
+.profile-photo{
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+}
+.profile-photo>img{
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-info .username {
+    font-size: 1.7em;
+    color: #545454;
+}
+.profile-info button{
+    background-color: #fafafa;
+    color: black;
+    font-size: 1.1em;
+    width: 6em;
+    border: unset;
+}
+.second{
+    display: flex;
+    padding-top: 2 rem;
+    
+    gap: 2em;
+}
+.galary{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1.5em;
+    row-gap: 1.5em;
+    margin-bottom: 2em;
+}
+.item{
+    height: 17.5emem;
+    width: 17.5em;
+}
+.item>img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.item>img:hover{
+    opacity: 0.7;
+}
+.edit-bio-form{
+    /* display: flex; */
+}
+.edit-bio-form{
+    position: absolute;
+    display: none;
+    left: 0;
+    padding-top: 0px;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15em;
+    height:6em ;
+    text-align: center;
+
+    background: #ffff;
+    /* box-shadow: 0px 0px 3px #333333; */
+}
+.edit-bio-form input {
+    margin-bottom: 0.5rem;
+    width: 19rem;
+    height: 1.6rem;
+}
+.edit-bio-form button{
+    background:#333333;
+    color: white;
+    cursor: pointer;
+   
+}
